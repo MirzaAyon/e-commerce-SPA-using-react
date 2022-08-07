@@ -4,7 +4,8 @@ import Header from './components/Header/Header';
 
 function App() {
   return (
-    <div className="App">
+    <div >
+      {/* div er classname ta shoralam */}
       <Header></Header>
     </div>
   );
