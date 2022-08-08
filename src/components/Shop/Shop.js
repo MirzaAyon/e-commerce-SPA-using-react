@@ -11,7 +11,11 @@ const Shop = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
         //regular data ashche kina console kore dekhbo
-    }, [])
+    }, []);
+    const handleAddToCart = (Product) => {
+        console.log('clciked')
+        console.log(Product)
+    }
     return (
         <div className='shop-container'>
             <div className='products-container'>
@@ -22,6 +26,8 @@ const Shop = () => {
                         <Product
                             key={product.id}
                             product={product}
+                            handleAddToCart={handleAddToCart}
+                        // normal destructuring na kore ekhan theke pathalam
                         ></Product>
                     )
                 }
