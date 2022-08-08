@@ -1,12 +1,20 @@
 .product img {
     width: 286px;
     height: 286px;
+    border-radius: 8px;
+    margin: 7px;
 }
 
 .product {
     width: 300px;
     height: 510px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    /* padding: 7px; eta hbe na kaorn etae kaj hoche na tai img e dbo */
+    position: relative;
 }
+
+/* shob shomoy boro tar dite hoy padding and chooto tar margin */
 
 .product-name {
     font-family: 'Lato';
@@ -15,4 +23,30 @@
     font-size: 21px;
     line-height: 25px;
     /* figma theke copy kore anlam */
+    margin-top: 7px;
+}
+
+.product-info {
+    margin: 0 14px;
+}
+
+.product-info p {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.btn-cart {
+    width: 100%;
+    background: #FFE0B3;
+    /* border: 1px solid #95A0A7; */
+    border: 0;
+    border-radius: 0px 0px 8px 8px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* position and bottom er kaj gula kora hoise btn ke thik kore boshanor jnno */
+
+.btn-cart:hover {
+    background-color: orange;
 }
