@@ -5,6 +5,7 @@ import './Shop.css';
 const Shop = () => {
     //dataloead er 1st step
     const [products, setProducts] = useState([])
+    const [cart, setCart] = useState([])
     //dataload er 2nd step
     useEffect(() => {
         fetch('products.json')
@@ -15,6 +16,9 @@ const Shop = () => {
     const handleAddToCart = (Product) => {
         console.log('clciked')
         console.log(Product)
+        // cart.push(product); //age evabe kortam
+        const newCart = [...cart, Product];
+        setCart(newCart);
     }
     return (
         <div className='shop-container'>
@@ -34,6 +38,7 @@ const Shop = () => {
             </div>
             <div className='cart-container'>
                 <h4>Order summary</h4>
+                <p>Selected Items: {cart.length}</p>
             </div>
             {/* pasha pashi boshanor jnno flex korle bhalo hoto but jehetu width er ekta mamla ache tai grid korle shubidha  */}
         </div>

@@ -2,9 +2,12 @@ import React from 'react';
 import './Product.css'
 
 const Product = (props) => {
+    //ichcha korle props er vitore direct 
+    //{ product, handleAddToCart } likha jabe 
     console.log(props.product);
     //inspact e showing pura shob products,eta na dileo hbe 
-    const { name, img, seller, price, ratings } = props.product;
+    const { product, handleAddToCart } = props;
+    const { name, img, seller, price, ratings } = product;
     // const handleAddToCart = () => {
     //     console.log('clciked')
     // }
@@ -22,7 +25,7 @@ const Product = (props) => {
                 <p> <small>Seller: {seller}</small> </p>
                 <p><small>Ratings: {ratings} stars</small></p>
             </div>
-            <button onClick={() => props.handleAddToCart(props.product)} className='btn-cart'>
+            <button onClick={() => handleAddToCart(product)} className='btn-cart'>
                 <p>Add to Cart</p>
             </button>
         </div>
