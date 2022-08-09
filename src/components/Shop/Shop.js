@@ -49,16 +49,26 @@ const Shop = () => {
     //ekadhik dependancy thakle , diye ekadhik dite parbo
     //jodi products dependancy na ditam tahole maan ta ekbar e call korto
 
-    const handleAddToCart = (Product) => {
+    const handleAddToCart = (selectedProduct) => {
         console.log('clciked')
-        console.log(Product)
+        console.log(selectedProduct)
         // cart.push(product); //age evabe kortam
-        const newCart = [...cart, Product];
+        let newCart = [];
+        const exists = cart.find(Product => Product.id === selectedProduct.id);
+        if (!exists) {
+            selectedProduct.quantity = 1;
+            newCart = [...cart, selectedProduct];
+        } else {
+            const rest = cart.filter(product => product.id !== selectedProduct.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
+
         setCart(newCart);
         // addToDb(Product) eta dile obj obj show hbe
         //utitlies er addToDb er previous video ta valo kore dekhbo
 
-        addToDb(Product.id); //eta dbo ekhn update hbe
+        addToDb(selectedProduct.id); //eta dbo ekhn update hbe
     }
     return (
         <div className='shop-container'>
