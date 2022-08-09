@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb } from '../../utilities/fakedb'
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -20,6 +21,9 @@ const Shop = () => {
         // cart.push(product); //age evabe kortam
         const newCart = [...cart, Product];
         setCart(newCart);
+        // addToDb(Product) eta dile obj obj show hbe
+
+        addToDb(Product.id); //eta dbo ekhn update hbe
     }
     return (
         <div className='shop-container'>
