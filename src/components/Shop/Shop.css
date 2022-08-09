@@ -11,6 +11,10 @@
     margin: 100px 50px;
 }
 
+.cart-container {
+    background-color: #FF9900;
+}
+
 
 
 @media screen and (max-widrh:1100px) {
