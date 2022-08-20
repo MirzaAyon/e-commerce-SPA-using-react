@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../../hooks/useproducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb'
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
@@ -6,19 +7,24 @@ import './Shop.css';
 
 const Shop = () => {
     //dataloead er 1st step
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
+    //useState keo r call korbo na
+    //nijeder banano useProduct ta dbo
+    const [products, setProducts] = useProducts();
+
     const [cart, setCart] = useState([])
     //dataload er 2nd step
-    useEffect(() => {
-        console.log('products load before fetch');
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-                console.log('products loaded');
-            })
-        //regular data ashche kina console kore dekhbo
-    }, []);
+    // useEffect(() => {
+    //     console.log('products load before fetch');
+    //     fetch('products.json')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setProducts(data)
+    //             console.log('products loaded');
+    //         })
+    //     //regular data ashche kina console kore dekhbo
+    // }, []);
+    //ei part tuku use products e ache tai eta ekhane r dewa lagbe na tai shorae fellam
     //cart take load krbo
     //code er bahirer theke load hbe tai side effect
     useEffect(() => {
