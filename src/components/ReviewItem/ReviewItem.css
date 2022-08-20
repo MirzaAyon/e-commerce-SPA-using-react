@@ -22,3 +22,24 @@
     justify-content: space-between;
     /* width er karone onk shomoy justity content space between nao nite pare tokhn width 100% kore dbo  */
 }
+
+.delete-icon {
+    color: rgba(235, 87, 87, 1);
+    font-size: 27px;
+}
+
+.review-item .delete-button {
+    background-color: rgba(235, 87, 87, 0.3);
+    border: 0;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* shob item figma theke newa */
+
+.review-item .delete-container {
+    display: flex;
+    align-items: center;
+}

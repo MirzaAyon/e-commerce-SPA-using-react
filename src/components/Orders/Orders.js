@@ -8,6 +8,13 @@ const Orders = () => {
     const [products, setProducts] = useProducts();
     //usestate er bodole nijeder banano usestate mane useProducts use korlam
     const [cart, setCart] = useCart(products)
+    const handleRemoveProduct = product => {
+        // console.log(product);
+        const rest = cart.filter(pd => pd.id !== product.id)
+        //prottekta product er id er sathe compare kortesi ami jei product ta click korsi ota, jodi na match khae tahole ami ota select kortesi
+        //matched ta baade baki gula select kortesi
+        setCart(rest);
+    }
     return (
         <div>
             {/* <h2>This is orders : {products.length}
@@ -19,7 +26,9 @@ const Orders = () => {
             <div className='shop-container'>
                 <div className='review-items-container'>
                     {
-                        cart.map(product => <ReviewItem key={product.id} product={product} >
+                        cart.map(product => <ReviewItem key={product.id} product={product}
+                            handleRemoveProduct={handleRemoveProduct}
+                        >
 
                         </ReviewItem>)
                     }
