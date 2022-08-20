@@ -1,6 +1,7 @@
 import React from 'react';
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useproducts';
+import { removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
@@ -14,6 +15,7 @@ const Orders = () => {
         //prottekta product er id er sathe compare kortesi ami jei product ta click korsi ota, jodi na match khae tahole ami ota select kortesi
         //matched ta baade baki gula select kortesi
         setCart(rest);
+        removeFromDb(product.id);
     }
     return (
         <div>
