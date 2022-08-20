@@ -15,3 +15,10 @@
 .review-item-details p {
     margin: 0;
 }
+
+.review-item-details-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* width er karone onk shomoy justity content space between nao nite pare tokhn width 100% kore dbo  */
+}
