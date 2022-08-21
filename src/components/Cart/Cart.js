@@ -1,9 +1,11 @@
 import React from 'react';
 import './Cart.css';
 
-const Cart = ({ cart }) => {
+const Cart = (props) => {
     // amk cart name props pathao tahole ami oke dekhabo
+    const { cart } = props
     console.log(cart); //array te ek ek kore add hochee inspact e 
+    console.log(props);
 
     let total = 0;
     let shipping = 0;
@@ -28,6 +30,7 @@ const Cart = ({ cart }) => {
             <p>Total Shipping: ${shipping}</p>
             <p>Tax: ${tax}</p>
             <h5>Grand Total: ${grandTotal.toFixed(2)}</h5>
+            {props.children}
         </div>
         // click korar por kaj hochee
     );
