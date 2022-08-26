@@ -76,6 +76,6 @@ ans: Navlink and Custom active link
 
  12.What is the name of the node module that you installed to have the react router in your React web application?
 
-ans : You have selected "react-router" but correct answer is "react-router-dom".
+ans : You have selected "react-router" but correct answer is "react-router-dom"
 
 */
